@@ -1,5 +1,8 @@
 # Pycharm 에서 Django 프로젝트 시작하기
 
+- 기본적으로 장고 프로젝트 한 개당 한 개의 DB를 사용한당.
+- 장고 프로젝트에는 기본적으로 관리프로그램이 내장되어 있기때문에
+
 1. pycharm 프로젝트 생성(python 프로젝트)
 
 2. Django 설치
@@ -69,3 +72,24 @@ localhost:8888/admin
        ....
        ....
    ]
+3.emaillist
+    1.python manage.py startapp emaillist
+    2. 어플리케이션 등록(settings.py)
+        INSTALLED_APPS =[
+            'emaillist',
+            ....
+            ....
+        ]
+        3.tempalate
+               |--- emaillist
+                어플리케이션 template 디렉토리 생성
+    4-1. Model 정의
+    4-2. admin.py 에
+        admin site.register(Emaillist)
+    4-3 migration 이름의 DDL python 모듈을 생성
+        python manage.py makemigrations
+    4.4. 물리DB와 스키마 동기화 작업을 한다.
+        python manage.py migrate
+    5. urls.py에서 url-view의 handler 매핑
+    6. views.py에서 핸들러 함수 구현(요청처리,모델작업)
+    7. 화면이 필요한 경우, 해당 template 작업
