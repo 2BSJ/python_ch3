@@ -64,16 +64,25 @@ localhost:8888/admin
 -------------------------
 
 # Application 작업
-1. 어플레키에션 추가
-[터미널] python manage.py startapp helloworld
-2. 어플리케이션 등록(settings.py)
-   INSTALLED_APPS =[
-      'python_ch3',
-       ....
-       ....
-   ]
-3.emaillist
-    1.python manage.py startapp emaillist
+1. helloworld
+    1. 어플리케이션 추가
+    [터미널] python manage.py startapp helloworld
+    2. 어플리케이션 등록(settings.py)
+       INSTALLED_APPS =[
+          'helloworld',
+           ....
+           ....
+       ]
+    3. template
+          |---- helloworld
+       어플리케이션 template 디렉토리 생성
+    4. Model 정의(생략)
+    5. urls.py에서 url-view의 handler 매핑
+    6. views.py에서 핸들러 함수 구현(요청처리, 모델작업, 응답처리)
+    7. 화면이 필요한 경우, 해당 template 작업
+2.emaillist
+    1.어플리케이션 추가
+    [터미널] python manage.py startapp emaillist
     2. 어플리케이션 등록(settings.py)
         INSTALLED_APPS =[
             'emaillist',
@@ -82,7 +91,7 @@ localhost:8888/admin
         ]
         3.tempalate
                |--- emaillist
-                어플리케이션 template 디렉토리 생성
+                어플리케이션 template 디렉토리 생성        
     4-1. Model 정의
     4-2. admin.py 에
         admin site.register(Emaillist)
