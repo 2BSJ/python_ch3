@@ -21,10 +21,17 @@ import helloworld.views as helloworld_views
 
 urlpatterns = [
     path('emaillist/', emaillist_views.index),
-
     path('emaillist/form', emaillist_views.form),
+    path('emaillist/add', emaillist_views.add),
+
 
     path('helloworld/', helloworld_views.hello),
+    path('helloworld/hello2/<int:id>', helloworld_views.hello2),
+    path('helloworld/hello3', helloworld_views.hello3),
+
+    path('helloworld/counter/add', helloworld_views.counter_add),
+    path('helloworld/counter/max', helloworld_views.counter_max),
+    path('helloworld/counter/update', helloworld_views.counter_update),
 
     path('admin/', admin.site.urls),
 ]
